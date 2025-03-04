@@ -233,8 +233,8 @@ $('.part').on('touchstart', function(event) {
   });
 
   $(document).on('click', '.quitBtn', function() {
-    sessionStorage.setItem('redirectToIndex', 'true');
-    location.reload(); // Reloads the current page
+    // Force full page reload with cache bypass
+    window.location.href = '/index.html?reload=' + Date.now();
   });
 });
 
