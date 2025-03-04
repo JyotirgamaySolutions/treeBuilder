@@ -254,7 +254,7 @@ $(document).on('click', '.restartBtn', function() {
 });
 
 $(document).on('click', '.quitBtn', function() {
-  window.parent.postMessage('close-game', '*');
+  window.parent.location.reload(true);
 });
 
 

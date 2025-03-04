@@ -5,11 +5,6 @@ $(document).ready(function() {
   let wrongAttempts = 0;
   localStorage.removeItem('totalScore');
 
-  if (sessionStorage.getItem('redirectToIndex')) {
-    sessionStorage.removeItem('redirectToIndex');
-    window.location.href = '../index.html';
-    return; // Exit early to prevent running the rest of the code
-  }
   // Store the initial position of each part
   const initialPositions = {
     'mango-bark': { top: 120, left: 100 },
