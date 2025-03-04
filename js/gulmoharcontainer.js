@@ -7,7 +7,7 @@
 
   if (sessionStorage.getItem('redirectToIndex')) {
     sessionStorage.removeItem('redirectToIndex');
-    window.location.href = '../index.html';
+    window.location.href = 'https://tree-builder-zeta.vercel.app/';
     return; // Exit early to prevent running the rest of the code
   }
   // Store the initial position of each part
