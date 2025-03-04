@@ -7,7 +7,7 @@
 
   if (sessionStorage.getItem('redirectToIndex')) {
     sessionStorage.removeItem('redirectToIndex');
-    window.location.href = 'https://tree-builder-zeta.vercel.app/';
+    window.location.href = '../index.html';
     return; // Exit early to prevent running the rest of the code
   }
   // Store the initial position of each part
@@ -254,10 +254,8 @@ $(document).on('click', '.restartBtn', function() {
 });
 
 $(document).on('click', '.quitBtn', function() {
-  sessionStorage.setItem('redirectToIndex', 'true');
-  location.reload(); // Reloads the current page
+  window.location.reload(true);
 });
-
 
 
 function showMessage(message) {
