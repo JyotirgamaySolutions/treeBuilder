@@ -5,6 +5,11 @@
   let wrongAttempts = 0;
   localStorage.removeItem('totalScore');
 
+  if (sessionStorage.getItem('redirectToIndex')) {
+    sessionStorage.removeItem('redirectToIndex');
+    window.location.href = '../index.html';
+    return; // Exit early to prevent running the rest of the code
+  }
   // Store the initial position of each part
   const initialPositions = {
     'mango-bark': { top: 120, left: 100 },
@@ -249,9 +254,10 @@ $(document).on('click', '.restartBtn', function() {
 });
 
 $(document).on('click', '.quitBtn', function() {
-  location.reload();
-  window.location.href = '../index.html';
+  sessionStorage.setItem('redirectToIndex', 'true');
+  location.reload(); // Reloads the current page
 });
+
 
 
 function showMessage(message) {
