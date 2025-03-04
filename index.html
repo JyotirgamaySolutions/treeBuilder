@@ -273,9 +273,15 @@
             document.body.classList.add('no-scroll');
         });
 
+        // document.getElementById('quitBtn').addEventListener('click', () => {
+        //     document.getElementById('quitConfirmationModal').style.display = 'block';
+        // });
+
         document.getElementById('quitBtn').addEventListener('click', () => {
-            document.getElementById('quitConfirmationModal').style.display = 'block';
-        });
+    const modal = document.getElementById('quitConfirmationModal');
+    modal.style.display = 'block';
+    console.log('Quit confirmation modal displayed:', modal.style.display);
+});
 
         document.getElementById('closeModal').addEventListener('click', () => {
             document.getElementById('rulesModal').style.display = 'none';
@@ -285,7 +291,12 @@
         const yesQuitBtn = document.getElementById('yesQuitBtn');
         const noQuitBtn = document.getElementById('noQuitBtn');
 
-        yesQuitBtn.addEventListener('click', () => {
+//         yesQuitBtn.addEventListener('click', () => {
+//     window.location.href = 'http://games.rrbcea.org/'; 
+// });
+yesQuitBtn.addEventListener('click', () => {
+    console.log('Yes button clicked');
+    console.log('Redirecting to:', 'http://games.rrbcea.org/');
     window.location.href = 'http://games.rrbcea.org/'; 
 });
 
