@@ -225,7 +225,7 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.quitBtn', function() {
-    window.location.href = '../index.html';
+    window.parent.postMessage('close-game', '*');
   });
 });
 

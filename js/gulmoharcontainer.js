@@ -254,9 +254,9 @@ $(document).on('click', '.restartBtn', function() {
 });
 
 $(document).on('click', '.quitBtn', function() {
-  location.reload();
-  window.location.href = '../index.html';
+  window.parent.postMessage('close-game', '*');
 });
+
 
 
 function showMessage(message) {
