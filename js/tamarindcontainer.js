@@ -225,6 +225,7 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.quitBtn', function() {
+    location.reload();
     window.location.href = '../index.html';
   });
 });

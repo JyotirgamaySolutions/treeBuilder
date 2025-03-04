@@ -244,6 +244,16 @@ $(document).on('click', '#mainMenuBtnResult', function() {
 });
 });
 
+$(document).on('click', '.restartBtn', function() {
+  location.reload();
+});
+
+$(document).on('click', '.quitBtn', function() {
+  location.reload();
+  window.location.href = '../index.html';
+});
+
+
 function showMessage(message) {
   const messageElement = $('<div class="message"></div>').text(message);
   $('body').append(messageElement);
