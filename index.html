@@ -253,6 +253,7 @@
             // Show main content
             document.querySelector('.buttons-container').style.display = 'flex';
             document.getElementById('backgroundVideo').style.display = 'block';
+            document.getElementById('touchBlocker').style.pointerEvents = 'none';
         }
 
         // Event listener for messages from iframe
@@ -278,9 +279,8 @@
         // });
 
         document.getElementById('quitBtn').addEventListener('click', () => {
-    const modal = document.getElementById('quitConfirmationModal');
-    modal.style.display = 'block';
-    console.log('Quit confirmation modal displayed:', modal.style.display);
+  console.log('Quit button clicked');
+  document.getElementById('quitConfirmationModal').style.display = 'block';
 });
 
         document.getElementById('closeModal').addEventListener('click', () => {
@@ -356,6 +356,14 @@ noQuitBtn.addEventListener('click', () => {
     // Optional: Resume music when returning from game
     function closeGameScreen() {
         // ... existing code ...
+        document.body.classList.remove('no-scroll');
+  gameFrame.style.display = 'none';
+  gameFrame.src = '';
+  document.querySelector('.buttons-container').style.display = 'flex';
+  document.getElementById('backgroundVideo').style.display = 'block';
+  // Reset modals
+  document.getElementById('quitConfirmationModal').style.display = 'none';
+  document.getElementById('rulesModal').style.display = 'none';
         backgroundMusic.play();
     }
 
