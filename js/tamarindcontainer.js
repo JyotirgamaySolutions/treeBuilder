@@ -212,6 +212,8 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '#identify-next-tree', function() {
+    $('.touch-blocker').remove();
+    $('#mango-info-modal').fadeOut();
     const tamarindScore= score; // Get the current score
     localStorage.setItem('tamarindScore', tamarindScore); // Store it in localStorage
     // Redirect to the next container
@@ -241,9 +243,11 @@ function revealMainImage() {
   const silhouette = $('#tamarind-tree-mainimg .silhouette');
 
   silhouette.fadeOut(1000, function() {
+    setTimeout(function() {
     mainImage.fadeIn(1000);
     $('#tamarindmain-barkimg, #tamarindmain-leaveimg, #tamarindmain-fruitimg, #tamarindmain-flowerimg').css('z-index', -1);
     $('#tamarind-info-modal').fadeIn();
+    }, 1000);
   });
 }
 

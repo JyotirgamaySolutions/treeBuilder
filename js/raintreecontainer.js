@@ -212,6 +212,8 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '#identify-next-tree', function() {
+    $('.touch-blocker').remove();
+    $('#raintree-info-modal').fadeOut();
     const raintreeScore = score; // Get the current score
     localStorage.setItem('raintreeScore', raintreeScore); // Store it in localStorage
     // Redirect to the next container
@@ -241,9 +243,11 @@ function revealMainImage() {
   const silhouette = $('#raintree-tree-mainimg .silhouette');
 
   silhouette.fadeOut(1000, function() {
+    setTimeout(function() {
     mainImage.fadeIn(1000);
     $('#raintreemain-barkimg, #raintreemain-leaveimg, #raintreemain-fruitimg, #raintreemain-flowerimg').css('z-index', -1);
     $('#raintree-info-modal').fadeIn();
+    }, 1000);
   });
 }
 

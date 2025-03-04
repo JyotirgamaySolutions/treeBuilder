@@ -215,6 +215,8 @@ $('.part').on('touchstart', function(event) {
 
   // Rest of the code remains the same...
   $(document).on('click', '#identify-next-tree', function() {
+    $('.touch-blocker').remove();
+    $('#mango-info-modal').fadeOut();
     const mangoScore = score; // Get the current score
     localStorage.setItem('mangoScore', mangoScore); // Store it in localStorage
     // Redirect to the next container
@@ -244,9 +246,11 @@ function revealMainImage() {
   const silhouette = $('#mango-tree-mainimg .silhouette');
 
   silhouette.fadeOut(1000, function() {
+    setTimeout(function() {
     mainImage.fadeIn(1000);
     $('#mangomain-barkimg, #mangomain-leaveimg, #mangomain-fruitimg, #mangomain-flowerimg').css('z-index', -1);
     $('#mango-info-modal').fadeIn();
+    }, 1000);
   });
 }
 

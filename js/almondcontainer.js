@@ -209,6 +209,8 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '#identify-next-tree', function() {
+    $('.touch-blocker').remove();
+    $('#almond-info-modal').fadeOut();
     const almondScore = score; // Get the current score
     localStorage.setItem('almondScore', almondScore); // Store it in localStorage
     // Redirect to the next container
@@ -238,9 +240,11 @@ function revealMainImage() {
   const silhouette = $('#almond-tree-mainimg .silhouette');
 
   silhouette.fadeOut(1000, function() {
+    setTimeout(function() {
     mainImage.fadeIn(1000);
     $('#almondmain-barkimg, #almondmain-leaveimg, #almondmain-fruitimg, #almondmain-flowerimg').css('z-index', -1);
     $('#almond-info-modal').fadeIn();
+    }, 1000);
   });
 }
 

@@ -273,7 +273,13 @@ audio {
     height: 60%;
     width: 70%;
     border: 10px solid rgb(5, 129, 5);
+    pointer-events: auto !important; /* Enable clicks within modal content */
+    position: relative;
 }
+.touch-blocker {
+    z-index: 9998; /* Keep below modal */
+}
+
 
 .close-button {
     color: #aaa;
@@ -339,6 +345,17 @@ audio {
     width: 50%;
     height: 50%;
     padding: 10px 20px;
+    opacity: 0; /* Initially hide the image */
+    animation: fadeInImage 0.5s forwards; /* Apply 3s delay */
+    animation-delay: 3s; /* Delay before animation starts */
+}
+@keyframes fadeInImage {
+    0% {
+        opacity: 0; /* Start with invisible image */
+    }
+    100% {
+        opacity: 1; /* End with visible image */
+    }
 }
 
 .score {
@@ -461,7 +478,7 @@ audio {
     color: white;
     font-size: 1rem;
     font-weight: bold;
-    z-index: 1000;
+    z-index: 10000;
     background-image: url('/assets/utilities/buttonBgimg.png');
     background-size: cover;
     cursor: pointer;
@@ -473,8 +490,8 @@ audio {
     border-radius: 70%;
     padding: 15px;
     text-align: center;
-    width: 140px;
-    height: 120px;
+    width: 180px;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;

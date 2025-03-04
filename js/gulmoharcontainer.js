@@ -227,6 +227,7 @@
     localStorage.setItem('totalScore', finalScore);
 
     // Show the result modal and update the total score display
+    $('.touch-blocker').remove();
     $('#gulmohar-tree-info-modal').fadeOut();
     $('#result-modal').fadeIn(); // Show the result modal
     $('#total-score').text(finalScore); // Update the total score display
@@ -257,9 +258,11 @@ function revealMainImage() {
   const silhouette = $('#gulmohar-tree-mainimg .silhouette');
 
   silhouette.fadeOut(1000, function() {
+    setTimeout(function() {
     mainImage.fadeIn(1000);
     $('#gulmoharmain-barkimg, #gulmoharmain-leaveimg, #gulmoharmain-fruitimg, #gulmoharmain-flowerimg').css('z-index', -1);
     $('#gulmohar-info-modal').fadeIn();
+    }, 1000);
   });
 }
 

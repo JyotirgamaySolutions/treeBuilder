@@ -359,8 +359,14 @@ audio {
     height: 60%; /* Increased height for larger modal */
     width: 70%; /* Increased width for larger modal */
     border: 10px solid rgb(5, 129, 5);
+    pointer-events: auto !important; /* Enable clicks within modal content */
+    position: relative;
+    
 }
 
+.touch-blocker {
+    z-index: 9998; /* Keep below modal */
+}
 .close-button {
     color: #aaa;
     float: right;
@@ -430,6 +436,17 @@ audio {
     width: 50%;
     height: 50%;
     padding: 10px 20px;
+    opacity: 0; /* Initially hide the image */
+    animation: fadeInImage 0.5s forwards; /* Apply 3s delay */
+    animation-delay: 3s; /* Delay before animation starts */
+}
+@keyframes fadeInImage {
+    0% {
+        opacity: 0; /* Start with invisible image */
+    }
+    100% {
+        opacity: 1; /* End with visible image */
+    }
 }
 
 /* Score Container Styles */
@@ -580,7 +597,7 @@ audio {
     color: white;
     font-size: 1rem;
     font-weight: bold;
-    z-index: 1000;
+    z-index: 10000;
     /* margin-top: 15px;  */
     background-image: url('/assets/utilities/buttonBgimg.png'); /* Add your background image here */
     background-size: cover;
@@ -593,8 +610,8 @@ audio {
     border-radius: 70%; /* Make it a circle */
     padding: 15px; /* Add some padding */
     text-align: center; /* Center the text */
-    width: 140px; /* Set a fixed width */
-    height: 120px; /* Set a fixed height */
+    width: 180px; /* Set a fixed width */
+    height: 140px; /* Set a fixed height */
     display: flex; /* Use flexbox for centering text */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
