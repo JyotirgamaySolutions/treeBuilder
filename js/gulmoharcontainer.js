@@ -254,7 +254,8 @@ $(document).on('click', '.restartBtn', function() {
 });
 
 $(document).on('click', '.quitBtn', function() {
-  window.location.reload(true);
+  location.reload();
+  window.location.href = '../index.html';
 });
 
 

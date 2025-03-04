@@ -230,7 +230,7 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.quitBtn', function() {
-    window.location.reload(true);
+    window.location.href = '../index.html';
   });
 });
 

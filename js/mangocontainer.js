@@ -228,7 +228,7 @@ $('.part').on('touchstart', function(event) {
   });
 
   $(document).on('click', '.quitBtn', function() {
-    window.location.reload(true);
+    window.location.href = '../index.html';
   });
 });
 
