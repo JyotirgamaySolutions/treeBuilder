@@ -279,8 +279,8 @@
         // });
 
         document.getElementById('quitBtn').addEventListener('click', () => {
-  console.log('Quit button clicked');
-  document.getElementById('quitConfirmationModal').style.display = 'block';
+    document.getElementById('quitConfirmationModal').style.display = 'block';
+    document.getElementById('touchBlocker').style.pointerEvents = 'auto'; // Allow interaction with the modal
 });
 
         document.getElementById('closeModal').addEventListener('click', () => {
