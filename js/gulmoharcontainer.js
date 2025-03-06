@@ -310,5 +310,5 @@ $(document).on('click', '#closeGameOverModal', function() {
   $(document).on('click', '#mainMenuBtn', function() {
     const totalScore = (parseInt(localStorage.getItem('totalScore')) || 0) + score;
     localStorage.setItem('totalScore', totalScore);
-    window.location.href = '../index.html';
+    window.parent.location.reload(true);
   });
