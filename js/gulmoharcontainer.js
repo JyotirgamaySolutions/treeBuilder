@@ -245,7 +245,7 @@ $(document).on('click', '#playAgainBtnResult', function() {
 
 $(document).on('click', '#mainMenuBtnResult', function() {
     localStorage.removeItem('totalScore');
-    window.location.href = '../index.html';
+    window.parent.location.reload(true);
 });
 });
 
